@@ -1,0 +1,17 @@
+
+[daemon]
+pid_location = /home/example/communicate.pid
+archive_exec_path = /home/example/repos/archive_pics.py
+conf_path = <path to this file>
+
+[Telegram]
+poll_timeout = 500
+bot_id = bot4444444444444:AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+url = https://api.telegram.org/
+master_id = 6666666666
+true_m_id = 7777777777
+
+[gate-keeper]
+path = /home/example/gate-keeper
+ports = 80,443,8443
+
