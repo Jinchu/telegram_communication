@@ -39,7 +39,17 @@ def handle_input(raw_data):
     if chat_id in ignored_chats:
         return
 
-    command = raw_data['text']
+    try:
+        command = raw_data['text']
+    except KeyError:
+        command = "invalid"
+        if content_type == 'photo' and choice([True, False]):
+            BOT.sendMessage(chat_id, "Quite beautiful pic!");
+        elif content_type == 'photo':
+            BOT.sendMessage(chat_id, "I am merely a simple bot. I do not " +
+                            "understand the meaning of this.")
+        else:
+            BOT.sendMessage(chat_id, "Bot received a: %s" % content_type)
 
     if chat_id in trusted_chat_rooms:
         print('This chat room can be trusted')
@@ -72,14 +82,6 @@ def handle_input(raw_data):
             print("Known chat room. no actions taken")
             return
         send_warning_to_admin(BOT, CONFIG, raw_data, chat_id)
-        return
-
-    if content_type != 'text':
-        print(content_type)
-        if content_type == 'photo' and choice([True, False]):
-            BOT.sendMessage(master_id, "Quite beautiful pic, sir.")
-        else:
-            BOT.sendMessage(master_id, "I'm a bot. Please use text, ok?")
         return
 
     # This command stops the whole program.
