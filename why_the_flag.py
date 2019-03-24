@@ -12,7 +12,7 @@ import configparser
 class AlmanakkaParser:
     def __init__(self, configuration):
         self.url = 'https://almanakka.helsinki.fi/fi/'
-        self.url += 'liputus-ja-juhlapaivat/liputuspaivat-2018.html'
+        self.url += 'liputus-ja-juhlapaivat/liputuspaivat-209.html'
         self.configuration = configuration
         self.reason_for_flag = None
 
