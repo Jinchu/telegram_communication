@@ -32,3 +32,7 @@ python3 communicate_raspb.py -h
 
 You need to have your own configuration file. There is an example configuration example_config.txt
 
+## Note
+Running this in your computer opens it to many possible attacks. If you decide to use this, you are
+the one taking the risks.
+
